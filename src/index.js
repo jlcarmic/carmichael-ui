@@ -1,5 +1,1 @@
-import FlashMessage from './FlashMessage'
-
-export default {
-  FlashMessage
-}
+export { default as FlashMessage } from './FlashMessage'
