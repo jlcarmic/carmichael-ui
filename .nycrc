@@ -1,0 +1,29 @@
+{
+  "check-coverage": true,
+  "per-file": true,
+  "lines": 99,
+  "statements": 99,
+  "functions": 99,
+  "branches": 99,
+  "extension": [
+    ".js",
+    ".jsx"
+  ],
+  "exclude": [
+    "__tests__/*",
+    ".nyc_output/*",
+    "backup/*",
+    "config/*",
+    "constants/*",
+    "design/*",
+    "dist/*",
+    "models/*",
+    "migrations/*",
+    "node_modules/*",
+    "public/*",
+    ".eslintrc.js",
+    "index.jsx",
+    "webpack.*.js"
+  ],
+  "extends": "@istanbuljs/nyc-config-babel"
+}
