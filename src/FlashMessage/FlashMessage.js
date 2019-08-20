@@ -1,43 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import FontAwesome from 'react-fontawesome'
+import styled from 'styled-components'
 
 const Flash = styled.div`
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '14px')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '600')};
-  margin-top: ${(props) => (props.marginTop ? props.marginTop : '-8px')};
-  margin-right: ${(props) => (props.marginRight ? props.marginRight : '-8px')};
-  margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : '0')};
-  margin-left: ${(props) => (props.marginLeft ? props.marginLeft : '-8px')};
-  padding: 8px;
-  text-align: center;
+  border-style: ${(props) => props.theme.flashMessage.borderStyle};
+  border-width: ${(props) => props.theme.flashMessage.borderWidth};
+  font-size: ${(props) => props.theme.flashMessage.fontSize};
+  font-weight: ${(props) => props.theme.flashMessage.fontWeight};
+  margin-top: ${(props) => props.theme.flashMessage.marginTop};
+  margin-right: ${(props) => props.theme.flashMessage.marginRight};
+  margin-bottom: ${(props) => props.theme.flashMessage.marginBottom};
+  margin-left: ${(props) => props.theme.flashMessage.marginLeft};
+  padding: ${(props) => props.theme.flashMessage.padding};
+  text-align: ${(props) => props.theme.flashMessage.textAlign};
 `
 
 const Error = styled(Flash)`
-  background-color: #F1DEDE;
-  border-color: #A74544;
-  color: #A74544;
+  background-color: ${(props) => props.theme.flashMessage.error.backgroundColor};
+  border-color: ${(props) => props.theme.flashMessage.error.borderColor};
+  color: ${(props) => props.theme.flashMessage.error.color};
 `
 
 const Info = styled(Flash)`
-  background-color: #DAEDF6;
-  border-color: #34708E;
-  color: #34708E;
+  background-color: ${(props) => props.theme.flashMessage.info.backgroundColor};
+  border-color: ${(props) => props.theme.flashMessage.info.borderColor};
+  color: ${(props) => props.theme.flashMessage.info.color};
 `
 
 const Success = styled(Flash)`
-  background-color: #DFF0D9;
-  border-color: #3E753F;
-  color: #3E753F;
+  background-color: ${(props) => props.theme.flashMessage.success.backgroundColor};
+  border-color: ${(props) => props.theme.flashMessage.success.borderColor};
+  color: ${(props) => props.theme.flashMessage.success.color};
 `
 
 const Warning = styled(Flash)`
-  background-color: #FCF8E4;
-  border-color: #896C3F;
-  color: #896C3F;
+  background-color: ${(props) => props.theme.flashMessage.warning.backgroundColor};
+  border-color: ${(props) => props.theme.flashMessage.warning.borderColor};
+  color: ${(props) => props.theme.flashMessage.warning.color};
 `
 
 const CloseFlash = styled.a`
@@ -46,62 +46,32 @@ const CloseFlash = styled.a`
   margin-top: -4px;
 `
 
-const FlashMessage = ({
-  close, fontSize, fontWeight, marginBottom, marginLeft, marginRight, marginTop, message, type,
-}) => {
+const FlashMessage = ({ close, message, theme, type }) => {
   switch (type) {
     case 'error':
       return (
-        <Error
-          fontSize={fontSize}
-          fontWeight={fontWeight}
-          marginBottom={marginBottom}
-          marginLeft={marginLeft}
-          marginRight={marginRight}
-          marginTop={marginTop}
-        >
+        <Error>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
         </Error>
       )
     case 'info':
       return (
-        <Info
-          fontSize={fontSize}
-          fontWeight={fontWeight}
-          marginBottom={marginBottom}
-          marginLeft={marginLeft}
-          marginRight={marginRight}
-          marginTop={marginTop}
-        >
+        <Info>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
         </Info>
       )
     case 'success':
       return (
-        <Success
-          fontSize={fontSize}
-          fontWeight={fontWeight}
-          marginBottom={marginBottom}
-          marginLeft={marginLeft}
-          marginRight={marginRight}
-          marginTop={marginTop}
-        >
+        <Success>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
         </Success>
       )
     case 'warning':
       return (
-        <Warning
-          fontSize={fontSize}
-          fontWeight={fontWeight}
-          marginBottom={marginBottom}
-          marginLeft={marginLeft}
-          marginRight={marginRight}
-          marginTop={marginTop}
-        >
+        <Warning>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
         </Warning>
@@ -113,12 +83,6 @@ const FlashMessage = ({
 
 FlashMessage.defaultProps = {
   close: () => { },
-  fontSize: '14px',
-  fontWeight: '600',
-  marginTop: '-8px',
-  marginRight: '-8px',
-  marginBottom: '0',
-  marginLeft: '-8px',
 }
 
 FlashMessage.propTypes = {
@@ -134,30 +98,6 @@ FlashMessage.propTypes = {
    * The type of flash message to display, this impacts the colors
    */
   type: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
-  /**
-   * (Optional): Allows setting of the font size within the flash message. Default: 14px
-   */
-  fontSize: PropTypes.string,
-  /**
-   * (Optional): Allows setting of the font weight within the flash message. Default: 600
-   */
-  fontWeight: PropTypes.string,
-  /**
-   * (Optional): Allows setting of the top margin for the flash message. Default: -8px
-   */
-  marginTop: PropTypes.string,
-  /**
-   * (Optional): Allows setting of the right margin for the flash message. Default: -8px
-   */
-  marginRight: PropTypes.string,
-  /**
-   * (Optional): Allows setting of the bottom margin for the flash message. Default: 0
-   */
-  marginBottom: PropTypes.string,
-  /**
-   * (Optional): Allows setting of the left margin for the flash message. Default: -8px
-   */
-  marginLeft: PropTypes.string,
 }
 
 export default FlashMessage
