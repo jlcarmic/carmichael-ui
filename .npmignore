@@ -1,3 +1,4 @@
+.storybook
 node_modules
 src
 tests
@@ -6,4 +7,6 @@ tests
 .gitignore
 .nvmrc
 .nycrc
+README.md
+theme.js
 webpack.config.js

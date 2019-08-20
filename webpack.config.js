@@ -7,18 +7,25 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [{
-      test: /\.(js|jsx)$/,
+      test: /\.js$/,
       exclude: /node_modules/,
       use: ['babel-loader']
+    }, {
+      test: /\.stories\.js?$/,
+      use: [require.resolve('@storybook/addon-storysource/loader')],
+      include: path.resolve(__dirname, 'src'),
+      enforce: 'pre',
     }],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'index.js',
+    publicPath: '',
+    filename: 'carmichael-ui.js',
+    library: 'carmichael-ui',
+    libraryTarget: 'commonjs2'
   },
   plugins: [
     new CleanWebpackPlugin(),

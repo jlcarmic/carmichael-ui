@@ -5,6 +5,7 @@
   "plugins": [
     "@babel/plugin-transform-runtime",
     "babel-plugin-styled-components",
-    "istanbul"
+    "istanbul",
+    "babel-plugin-react-docgen",
   ]
 }

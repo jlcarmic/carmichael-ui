@@ -1,8 +1,31 @@
 {
   "name": "carmichael-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "A library of reusable React components",
+  "main": "dist/carmichael-ui.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "./node_modules/.bin/webpack -p --config ./webpack.config.js",
+    "lint": "./node_modules/.bin/eslint --format codeframe .",
+    "prepare": "npm run build",
+    "storybook": "./node_modules/.bin/start-storybook -p 1337",
+    "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages -- --out=.out",
+    "test": "npm run lint && npm run test:coverage",
+    "test:coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --opts 'tests/setup/mocha.opts' 'tests/**/*.test.js*'",
+    "test:nocoverage": "./node_modules/.bin/mocha --opts 'tests/setup/mocha.opts' 'tests/**/*.test.js*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlcarmic/carmichael-ui.git"
+  },
+  "author": "John Carmichael <jlcarmic@gmail.com>",
+  "license": "unlicense",
+  "bugs": {
+    "url": "https://github.com/jlcarmic/carmichael-ui/issues"
+  },
+  "homepage": "https://jlcarmic.github.io/carmichael-ui",
   "dependencies": {
     "react": "^16.9.0",
     "react-fontawesome": "^1.6.1",
@@ -14,25 +37,24 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.5.5",
     "@istanbuljs/nyc-config-babel": "^2.1.1",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-info": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@storybook/storybook-deployer": "^2.8.1",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.2.0",
+    "babel-plugin-react-docgen": "^3.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "jest": "^24.9.0",
+    "typescript": "^3.5.3",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   },
-  "scripts": {
-    "build": "./node_modules/.bin/webpack -p --config ./webpack.config.js",
-    "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jlcarmic/carmichael-ui.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jlcarmic/carmichael-ui/issues"
-  },
-  "homepage": "https://github.com/jlcarmic/carmichael-ui#readme"
+  "storybook-deployer": {
+    "gitUsername": "jlcarmic",
+    "gitEmail": "jlcarmic@gmail.com",
+    "commitMessage": "Deploy Carmichael UI Storybook to GitHub Pages"
+  }
 }
