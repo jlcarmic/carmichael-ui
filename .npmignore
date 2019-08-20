@@ -1,7 +1,8 @@
 node_modules
 src
 tests
-eslintrc.js
+.babelrc
+.eslintrc.js
 .gitignore
 .nvmrc
 .nycrc
