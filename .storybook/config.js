@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import Theme from '../src/Theme'
 import StorybookTheme from '../StorybookTheme'
 
-const req = require.context('../src', true, /[^/]+\/stories.js$/)
+const req = require.context('../src', true, /[^/]+\/stories.jsx$/)
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename))

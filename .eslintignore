@@ -6,3 +6,6 @@
 
 # Ignore webpack files
 webpack.config.js
+
+# Ignore file used purely for exporting
+/src/index.js

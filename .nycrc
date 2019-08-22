@@ -1,4 +1,5 @@
 {
+  "all": true,
   "check-coverage": true,
   "per-file": true,
   "lines": 99,
@@ -10,19 +11,16 @@
     ".jsx"
   ],
   "exclude": [
-    "__tests__/*",
     ".nyc_output/*",
-    "backup/*",
-    "config/*",
-    "constants/*",
-    "design/*",
+    ".storybook/*",
     "dist/*",
-    "models/*",
-    "migrations/*",
     "node_modules/*",
-    "public/*",
+    "src/*/stories.jsx",
+    "src/index.js",
+    "src/Theme.js",
+    "tests/*",
     ".eslintrc.js",
-    "index.jsx",
+    "StorybookTheme.js",
     "webpack.*.js"
   ],
   "extends": "@istanbuljs/nyc-config-babel"

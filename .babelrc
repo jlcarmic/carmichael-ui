@@ -1,5 +1,14 @@
 {
   "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": "defaults",
+          "node": "10.16.0"
+        }
+      }
+    ],
     "@babel/react"
   ],
   "plugins": [

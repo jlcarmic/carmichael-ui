@@ -16,73 +16,74 @@ const Flash = styled.div`
   text-align: ${(props) => props.theme.flashMessage.textAlign};
 `
 
-const Error = styled(Flash)`
+export const ErrorFlash = styled(Flash)`
   background-color: ${(props) => props.theme.flashMessage.error.backgroundColor};
   border-color: ${(props) => props.theme.flashMessage.error.borderColor};
   color: ${(props) => props.theme.flashMessage.error.color};
 `
 
-const Info = styled(Flash)`
+export const InfoFlash = styled(Flash)`
   background-color: ${(props) => props.theme.flashMessage.info.backgroundColor};
   border-color: ${(props) => props.theme.flashMessage.info.borderColor};
   color: ${(props) => props.theme.flashMessage.info.color};
 `
 
-const Success = styled(Flash)`
+export const SuccessFlash = styled(Flash)`
   background-color: ${(props) => props.theme.flashMessage.success.backgroundColor};
   border-color: ${(props) => props.theme.flashMessage.success.borderColor};
   color: ${(props) => props.theme.flashMessage.success.color};
 `
 
-const Warning = styled(Flash)`
+export const WarningFlash = styled(Flash)`
   background-color: ${(props) => props.theme.flashMessage.warning.backgroundColor};
   border-color: ${(props) => props.theme.flashMessage.warning.borderColor};
   color: ${(props) => props.theme.flashMessage.warning.color};
 `
 
-const CloseFlash = styled.a`
+export const CloseFlash = styled.a`
   float: right;
   font-size: 18px;
   margin-top: -4px;
 `
 
-const FlashMessage = ({ close, message, theme, type }) => {
+const FlashMessage = ({ close, message, type }) => {
   switch (type) {
     case 'error':
       return (
-        <Error>
+        <ErrorFlash>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
-        </Error>
+        </ErrorFlash>
       )
     case 'info':
       return (
-        <Info>
+        <InfoFlash>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
-        </Info>
+        </InfoFlash>
       )
     case 'success':
       return (
-        <Success>
+        <SuccessFlash>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
-        </Success>
+        </SuccessFlash>
       )
     case 'warning':
       return (
-        <Warning>
+        <WarningFlash>
           {message}
           <CloseFlash onClick={close}><FontAwesome name="times" /></CloseFlash>
-        </Warning>
+        </WarningFlash>
       )
+    /* istanbul ignore next */
     default:
       return null
   }
 }
 
 FlashMessage.defaultProps = {
-  close: () => { },
+  close: null,
 }
 
 FlashMessage.propTypes = {

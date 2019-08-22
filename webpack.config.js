@@ -7,18 +7,18 @@ module.exports = {
   mode: 'production',
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       use: ['babel-loader']
     }, {
-      test: /\.stories\.js?$/,
+      test: /\.stories\.jsx?$/,
       use: [require.resolve('@storybook/addon-storysource/loader')],
       include: path.resolve(__dirname, 'src'),
       enforce: 'pre',
     }],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

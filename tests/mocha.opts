@@ -1,0 +1,8 @@
+--require @babel/register
+--require tests/index.js
+--require tests/dom.js
+--recursive
+--ui bdd
+--colors
+--exit
+tests/**/*.test.js*

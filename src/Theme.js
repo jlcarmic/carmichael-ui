@@ -1,4 +1,5 @@
 // Colors
+/* eslint-disable no-unused-vars */
 const aegean = '#34708E'
 const aqua = '#63D2E2'
 const blush = '#F1DEDE'
@@ -27,9 +28,27 @@ const sky = '#DAEDF6'
 const storm = '#97A3A3'
 const tiger = '#F97624'
 const white = '#FFFFFF'
-
+/* eslint-enable no-unused-vars */
 
 export default {
+  divider: {
+    line: {
+      margin: {
+        desktop: '15px auto',
+        mobile: '12px auto',
+      },
+      width: '50%',
+    },
+    margin: '0 auto 10px',
+    maxWidth: '1000px',
+    text: {
+      fontSize: {
+        mobile: '18px',
+      },
+      fontWeight: '600',
+      margin: '0 20px',
+    },
+  },
   flashMessage: {
     borderStyle: 'solid',
     borderWidth: '0 0 1px 0',
@@ -62,28 +81,193 @@ export default {
       color: dijon,
     },
   },
-  scrollable: {
-    desktop: {
-      container: {
-        height: '20vh',
-      },
-      scrollToTop: {
-        fontSize: '36px',
-        right: '10px',
+  forms: {
+    form: {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      margin: '0 auto 30px',
+      maxWidth: '400px',
+      title: {
+        fontSize: '22px',
+        fontWeight: '600',
+        margin: '16px auto 28px',
       },
     },
-    mobile: {
-      container: {
-        height: '32vh',
-        margin: '6px 9px'
+    formField: {
+      leftAlignedFormField: {
+        margin: '0 auto 20px',
       },
-      scrollToTop: {
-        backgroundColor: white,
-        bottom: '350px',
-        color: aqua,
-        fontSize: '28px',
+      centeredFormField: {
+        margin: '0 auto 20px',
+      },
+      labelText: {
+        fontSize: '11px',
+        color: cerulean,
+        marginRight: '10px',
+        top: '-16px',
+      },
+    },
+    formInput: {
+      input: {
+        border: 'solid 1px #666666',
+        borderRadius: '3px',
+        focus: {
+          outlineColor: cerulean,
+        },
+        fontSize: '16px',
+        padding: '5px 8px',
+        placeholder: {
+          color: silver,
+        },
+        width: '100%',
+      },
+      radioGroup: {
+        fontSize: '16px',
+        padding: '5px 8px',
+        width: '100%',
+        textAlign: 'center',
+      },
+      radioInput: {
+        margin: '0 15px 0 8px',
+      },
+      submitButton: {
+        active: {
+          backgroundColor: white,
+          color: cerulean,
+          outlineColor: 'transparent',
+          outlineStyle: 'none',
+        },
+        backgroundColor: cerulean,
+        borderColor: cerulean,
+        borderStyle: 'solid',
+        borderRadius: '8px',
+        borderWidth: '1px',
+        color: white,
+        fontSize: '18px',
         fontWeight: '600',
-        right: '5px',
+        margin: '10px auto',
+        outlineColor: 'transparent',
+        outlineStyle: 'none',
+        padding: '4px 16px',
+      },
+      textArea: {
+        borderColor: graphite,
+        borderRadius: '3px',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        focus: {
+          outlineColor: cerulean,
+        },
+        fontSize: '16px',
+        height: '80px',
+        overflow: 'auto',
+        padding: '5px 8px',
+        placeholder: {
+          color: silver,
+        },
+        resize: 'none',
+        width: '100%',
+      },
+    },
+    formLink: {
+      divider: {
+        color: coin,
+        fontSize: '16px',
+        margin: '0 10px',
+      },
+      link: {
+        color: cerulean,
+        fontSize: '16px',
+        textDecoration: 'none',
+      },
+      margin: '-2px auto 8px',
+    },
+  },
+  hamburger: {
+    close: {
+      right: '10px',
+      top: '10px',
+    },
+    iconBar: {
+      backgroundColor: coin,
+      height: '3px',
+      marginBottom: '4px',
+      width: '20px',
+    },
+    left: '15px',
+    links: {
+      borderColor: white,
+      borderStyle: 'solid',
+      borderWidth: '1px 0 0 0',
+      marginTop: '15px',
+      paddingTop: '3px',
+    },
+    nonMenu: {
+      height: '100vh',
+      opacity: '0',
+      top: '-25px',
+      width: '100vw',
+    },
+    overlay: {
+      backgroundColor: ink,
+      color: white,
+      height: '100vh',
+      left: '-15px',
+      top: '-25px',
+      width: '200px',
+    },
+    top: '25px',
+  },
+  navItem: {
+    divider: {
+      margin: '0 5px',
+    },
+    desktopLink: {
+      color: cerulean,
+    },
+    desktopAnchor: {
+      color: cerulean,
+    },
+    desktopInactive: {
+      color: graphite,
+    },
+    mobileLink: {
+      color: coin,
+      fontSize: '16px',
+      marginTop: '15px',
+    },
+    mobileAnchor: {
+      color: coin,
+      fontSize: '16px',
+      marginTop: '15px',
+    },
+    mobileInactive: {
+      color: cyan,
+      fontSize: '16px',
+      fontWeight: '600',
+      marginTop: '15px',
+    },
+  },
+  scrollable: {
+    container: {
+      height: {
+        desktop: '20vh',
+        mobile: '32vh',
+      },
+      margin: '6px 9px',
+    },
+    scrollToTop: {
+      backgroundColor: white,
+      bottom: '235px',
+      color: aqua,
+      fontSize: {
+        desktop: '36px',
+        mobile: '28px',
+      },
+      fontWeight: '600',
+      right: {
+        desktop: '10px',
+        mobile: '5px',
       },
     },
   },

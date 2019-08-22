@@ -1,10 +1,10 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+import { storiesOf } from '@storybook/react' // eslint-disable-line import/no-extraneous-dependencies
 import styled from 'styled-components'
 import Scrollable from './Scrollable'
 
 const Child = styled.div`
-  height: 45vh;
+  height: 50vh;
   position: relative;
 `
 
