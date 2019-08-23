@@ -31,6 +31,9 @@ const white = '#FFFFFF'
 /* eslint-enable no-unused-vars */
 
 export default {
+  arrow: {
+    color: storm,
+  },
   divider: {
     line: {
       margin: {

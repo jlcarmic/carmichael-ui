@@ -9,11 +9,11 @@
     "dist/"
   ],
   "scripts": {
-    "build": "./node_modules/.bin/webpack -p --config ./webpack.config.js",
+    "build": "NODE_ENV=\"production\" ./node_modules/.bin/webpack -p --config ./webpack.config.js",
     "lint": "./node_modules/.bin/eslint --format codeframe .",
     "prepare": "npm run build",
-    "storybook": "./node_modules/.bin/start-storybook -p 1337",
-    "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages -- --out=.out",
+    "storybook": "NODE_ENV=\"development\" ./node_modules/.bin/start-storybook -p 1339",
+    "storybook:deploy": "NODE_ENV=\"development\" ./node_modules/.bin/storybook-to-ghpages -- --out=.out",
     "test": "npm run test:coverage",
     "test:ci": "npm run lint && npm run test:coverage",
     "test:coverage": "NODE_ENV=\"test\" ./node_modules/.bin/nyc ./node_modules/.bin/mocha --opts 'tests/mocha.opts'",
@@ -47,6 +47,7 @@
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-info": "^5.1.11",
     "@storybook/addon-storysource": "^5.1.11",
+    "@storybook/addon-viewport": "^5.1.11",
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "@storybook/storybook-deployer": "^2.8.1",

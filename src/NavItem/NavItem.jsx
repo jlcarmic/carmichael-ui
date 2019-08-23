@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const Divider = styled.span`
@@ -129,4 +129,4 @@ NavItem.propTypes = {
   target: PropTypes.string,
 }
 
-export default withTheme(NavItem)
+export default NavItem

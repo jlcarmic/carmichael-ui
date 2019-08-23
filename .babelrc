@@ -1,21 +1,62 @@
 {
-  "presets": [
-    [
-      "@babel/env",
-      {
-        "modules": false,
-        "targets": {
-          "browsers": "defaults",
-          "node": "10.16.0"
-        }
-      }
-    ],
-    "@babel/react"
-  ],
-  "plugins": [
-    "@babel/plugin-transform-runtime",
-    "babel-plugin-styled-components",
-    "istanbul",
-    "babel-plugin-react-docgen",
-  ]
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "browsers": "defaults",
+              "node": "10.16.0"
+            }
+          }
+        ],
+        "@babel/react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "babel-plugin-styled-components",
+        "babel-plugin-react-docgen"
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "browsers": "defaults",
+              "node": "10.16.0"
+            }
+          }
+        ],
+        "@babel/react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "babel-plugin-styled-components",
+        "istanbul",
+        "babel-plugin-react-docgen"
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "modules": false,
+            "targets": {
+              "browsers": "defaults",
+              "node": "10.16.0"
+            }
+          }
+        ],
+        "@babel/react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "babel-plugin-styled-components"
+      ]
+    }
+  }
 }

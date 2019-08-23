@@ -1,3 +1,4 @@
+export { default as Arrow } from './Arrow/Arrow'
 export { default as Divider } from './Divider/Divider'
 export { default as FlashMessage } from './FlashMessage/FlashMessage'
 export { default as Form } from './Forms/Form'

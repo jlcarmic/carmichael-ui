@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 
 const Flash = styled.div`
   border-style: ${(props) => props.theme.flashMessage.borderStyle};
@@ -101,4 +101,4 @@ FlashMessage.propTypes = {
   type: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
 }
 
-export default withTheme(FlashMessage)
+export default FlashMessage
