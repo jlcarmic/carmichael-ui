@@ -1,8 +1,10 @@
 {
   "name": "carmichael-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library of reusable React components",
   "main": "dist/carmichael-ui.js",
+  "module": "dist/carmichael-ui.js",
+  "sideEffects": false,
   "files": [
     "dist/"
   ],
@@ -27,7 +29,7 @@
     "url": "https://github.com/jlcarmic/carmichael-ui/issues"
   },
   "homepage": "https://jlcarmic.github.io/carmichael-ui",
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -67,8 +69,14 @@
     "jsdom": "^15.1.1",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^5.0.1",
     "sinon": "^7.4.1",
     "sinon-chai": "^3.3.0",
+    "styled-components": "^4.3.2",
     "typescript": "^3.5.3",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -54,4 +54,4 @@ Form.propTypes = {
   title: PropTypes.string,
 }
 
-export default Form
+export default withTheme(Form)

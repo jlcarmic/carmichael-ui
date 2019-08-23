@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 export const Links = styled.div`
@@ -46,4 +46,4 @@ FormLinks.propTypes = {
   })).isRequired,
 }
 
-export default FormLinks
+export default withTheme(FormLinks)
