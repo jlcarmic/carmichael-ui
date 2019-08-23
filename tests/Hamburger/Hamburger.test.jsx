@@ -9,15 +9,15 @@ import {
 } from 'mocha'
 import HamburgerMenu, {
   Icon, IconBar, NonMenu, Overlay,
-} from '../../src/NavBar/Hamburger'
-import NavItem from '../../src/NavBar/NavItem'
+} from '../../src/Hamburger/Hamburger'
+import NavItem from '../../src/NavItem/NavItem'
 import Theme from '../../src/Theme'
 
 const logo = () => (
   <div>LOGO</div>
 )
 
-describe('NavBar - Hamburger', () => {
+describe('Hamburger', () => {
   let sandbox
   let changeStateFunction
 
@@ -42,7 +42,6 @@ describe('NavBar - Hamburger', () => {
             isHamburgerOpen
             Logo={logo}
             menuLinks={links}
-            override
             setHamburgerState={changeStateFunction}
           />
         </BrowserRouter>

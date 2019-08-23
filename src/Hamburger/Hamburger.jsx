@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import FontAwesome from 'react-fontawesome'
-import NavItem from './NavItem'
+import NavItem from '../NavItem/NavItem'
 
 const Hamburger = styled.div`
   display: block;
@@ -11,7 +11,7 @@ const Hamburger = styled.div`
   top: ${(props) => props.theme.hamburger.top};
 
   @media only screen and (min-width: 750px) {
-    display: ${(props) => (props.override ? 'block' : 'none')};
+    display: none;
   }
 `
 
@@ -78,11 +78,11 @@ export const IconBar = styled.div`
 
 const HamburgerMenu = (props) => {
   const {
-    currentPage, isHamburgerOpen, Logo, menuLinks, override, setHamburgerState,
+    currentPage, isHamburgerOpen, Logo, menuLinks, setHamburgerState,
   } = props
 
   return (
-    <Hamburger override={override}>
+    <Hamburger>
       {
         isHamburgerOpen
           ? (

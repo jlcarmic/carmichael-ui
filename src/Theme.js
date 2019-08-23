@@ -219,33 +219,54 @@ export default {
     top: '25px',
   },
   navItem: {
+    anchor: {
+      color: {
+        desktop: cerulean,
+        mobile: coin,
+      },
+      fontSize: {
+        desktop: '16px',
+        mobile: '16px',
+      },
+      marginTop: {
+        desktop: '0',
+        mobile: '15px',
+      },
+    },
     divider: {
       margin: '0 5px',
     },
-    desktopLink: {
-      color: cerulean,
+    inactive: {
+      color: {
+        desktop: graphite,
+        mobile: cyan,
+      },
+      fontSize: {
+        desktop: '16px',
+        mobile: '16px',
+      },
+      fontWeight: {
+        desktop: '600',
+        mobile: '600',
+      },
+      marginTop: {
+        desktop: '15px',
+        mobile: '15px',
+      },
     },
-    desktopAnchor: {
-      color: cerulean,
-    },
-    desktopInactive: {
-      color: graphite,
-    },
-    mobileLink: {
-      color: coin,
-      fontSize: '16px',
-      marginTop: '15px',
-    },
-    mobileAnchor: {
-      color: coin,
-      fontSize: '16px',
-      marginTop: '15px',
-    },
-    mobileInactive: {
-      color: cyan,
-      fontSize: '16px',
-      fontWeight: '600',
-      marginTop: '15px',
+    link: {
+      color: {
+        desktop: cerulean,
+        mobile: coin,
+      },
+      fontSize: {
+        desktop: '16px',
+        mobile: '16px',
+      },
+      marginTop: {
+        desktop: '0',
+        mobile: '15px',
+      },
     },
   },
   scrollable: {
