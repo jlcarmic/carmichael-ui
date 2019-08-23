@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 export const LeftAlignedFormField = styled.div`
   margin: ${(props) => props.theme.forms.formField.leftAlignedFormField.margin};
@@ -63,4 +63,4 @@ FormField.propTypes = {
   labelText: PropTypes.string,
 }
 
-export default FormField
+export default withTheme(FormField)

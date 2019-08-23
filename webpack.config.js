@@ -27,6 +27,11 @@ module.exports = {
     library: 'carmichael-ui',
     libraryTarget: 'commonjs2'
   },
+  externals: {
+    "styled-components": {
+      commonjs2: "styled-components",
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(),
   ],
