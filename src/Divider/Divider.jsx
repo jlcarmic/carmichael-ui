@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;
@@ -46,4 +46,4 @@ Divider.propTypes = {
   text: PropTypes.string.isRequired,
 }
 
-export default withTheme(Divider)
+export default Divider

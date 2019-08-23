@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 import FontAwesome from 'react-fontawesome'
 import NavItem from '../NavItem/NavItem'
 
@@ -159,4 +159,4 @@ HamburgerMenu.propTypes = {
   setHamburgerState: PropTypes.func.isRequired,
 }
 
-export default withTheme(HamburgerMenu)
+export default HamburgerMenu

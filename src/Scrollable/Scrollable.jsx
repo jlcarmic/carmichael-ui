@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 import FontAwesome from 'react-fontawesome'
 
 export const Container = styled.div`
@@ -75,4 +75,4 @@ Scrollable.propTypes = {
   children: PropTypes.element.isRequired,
 }
 
-export default withTheme(Scrollable)
+export default Scrollable

@@ -42,7 +42,7 @@ storiesOf('Hamburger', module)
         />
       </Spacer>
     </BrowserRouter>
-  ))
+  ), { viewport: { defaultViewport: 'iphone6' } })
   .add('Menu Closed', () => (
     <Spacer>
       <HamburgerMenu
@@ -52,4 +52,4 @@ storiesOf('Hamburger', module)
         setHamberState={action('open menu')}
       />
     </Spacer>
-  ))
+  ), { viewport: { defaultViewport: 'iphone6' } })

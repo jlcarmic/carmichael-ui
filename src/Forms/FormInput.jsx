@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 
 export const Input = styled.input`
   border-color: ${(props) => props.theme.forms.formInput.input.borderColor};
@@ -184,4 +184,4 @@ FormInput.propTypes = {
   buttonText: PropTypes.string,
 }
 
-export default withTheme(FormInput)
+export default FormInput
