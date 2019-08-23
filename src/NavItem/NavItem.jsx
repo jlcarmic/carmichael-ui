@@ -7,49 +7,51 @@ export const Divider = styled.span`
   margin: ${(props) => props.theme.navItem.divider.margin};
 `
 
-export const DesktopLink = styled(NavLink)`
-  color: ${(props) => props.theme.navItem.desktopLink.color};
+export const Anchor = styled.a`
+  color: ${(props) => props.theme.navItem.anchor.color.mobile};
+  cursor: pointer;
+  font-size: ${(props) => props.theme.navItem.anchor.fontSize.mobile};
+  margin-top: ${(props) => props.theme.navItem.anchor.marginTop.mobile};
   text-decoration: none;
+
+  @media only screen and (min-width: 750px) {
+    color: ${(props) => props.theme.navItem.anchor.color.desktop};
+    font-size: ${(props) => props.theme.navItem.anchor.fontSize.desktop};
+    margin-top: ${(props) => props.theme.navItem.anchor.marginTop.desktop};
+  }
 `
 
-export const DesktopAnchor = styled.a`
-  color: ${(props) => props.theme.navItem.desktopAnchor.color};
+export const Inactive = styled.span`
+  color: ${(props) => props.theme.navItem.inactive.color.mobile};
+  font-size: ${(props) => props.theme.navItem.inactive.fontSize.mobile};
+  font-weight: ${(props) => props.theme.navItem.inactive.fontWeight.mobile};
+  margin-top: ${(props) => props.theme.navItem.inactive.marginTop.mobile};
+
+  @media only screen and (min-width: 750px) {
+    color: ${(props) => props.theme.navItem.inactive.color.desktop};
+    font-size: ${(props) => props.theme.navItem.inactive.fontSize.desktop};
+    font-weight: ${(props) => props.theme.navItem.inactive.fontWeight.desktop};
+    margin-top: ${(props) => props.theme.navItem.inactive.marginTop.desktop};
+  }
+`
+
+export const Link = styled(NavLink)`
+  color: ${(props) => props.theme.navItem.link.color.mobile};
+  font-size: ${(props) => props.theme.navItem.link.fontSize.mobile};
+  margin-top: ${(props) => props.theme.navItem.link.marginTop.mobile};
   text-decoration: none;
-`
 
-export const DesktopInactive = styled.span`
-  color: ${(props) => props.theme.navItem.desktopInactive.color};
-`
-
-export const MobileLink = styled(NavLink)`
-  color: ${(props) => props.theme.navItem.mobileLink.color};
-  font-size: ${(props) => props.theme.navItem.mobileLink.fontSize};
-  margin-top: ${(props) => props.theme.navItem.mobileLink.marginTop};
-  text-decoration: none;
-`
-
-export const MobileAnchor = styled.a`
-  color: ${(props) => props.theme.navItem.mobileAnchor.color};
-  font-size: ${(props) => props.theme.navItem.mobileAnchor.fontSize};
-  margin-top: ${(props) => props.theme.navItem.mobileAnchor.marginTop};
-  text-decoration: none;
-`
-
-export const MobileInactive = styled.span`
-  color: ${(props) => props.theme.navItem.mobileInactive.color};
-  font-size: ${(props) => props.theme.navItem.mobileInactive.fontSize};
-  font-weight: ${(props) => props.theme.navItem.mobileInactive.fontWeight};
-  margin-top: ${(props) => props.theme.navItem.mobileInactive.marginTop};
+  @media only screen and (min-width: 750px) {
+    color: ${(props) => props.theme.navItem.link.color.desktop};
+    font-size: ${(props) => props.theme.navItem.link.fontSize.desktop};
+    margin-top: ${(props) => props.theme.navItem.link.marginTop.desktop};
+  }
 `
 
 /* istanbul ignore next */
 const NavItem = ({
-  currentPage, divider, mobile, match, href, text, click = '', target = '',
+  currentPage, divider, match, href, text, click = '', target = '',
 }) => {
-  const Link = mobile ? MobileLink : DesktopLink
-  const Anchor = mobile ? MobileAnchor : DesktopAnchor
-  const Inactive = mobile ? MobileInactive : DesktopInactive
-
   if (target) {
     return divider
       ? (
@@ -72,25 +74,22 @@ const NavItem = ({
       : <Anchor id={text.toLowerCase()} onClick={click}>{text}</Anchor>
   }
 
-  const item = currentPage === match
+  const link = currentPage === match
     ? <Inactive id={text.toLowerCase()}>{text}</Inactive>
     : <Link id={text.toLowerCase()} to={href}>{text}</Link>
 
   return divider
     ? (
       <>
-        {item}
+        {link}
         <Divider>|</Divider>
       </>
     )
-    : item
+    : link
 }
-
-// currentPage, divider, mobile, match, href, text, click = '', target = '',
 
 NavItem.defaultProps = {
   divider: false,
-  mobile: false,
   click: null,
   target: '',
   currentPage: '',
@@ -107,10 +106,6 @@ NavItem.propTypes = {
    * A boolean representing whether a divider should be displayed after the link
    */
   divider: PropTypes.bool,
-  /**
-   * A boolean representing whether a desktop or mobile link should be displayed
-   */
-  mobile: PropTypes.bool,
   /**
    * The string that should be compared to the currentPage to determine
    * if the link should be disabled
