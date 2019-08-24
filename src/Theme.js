@@ -295,4 +295,16 @@ export default {
       },
     },
   },
+  search: {
+    borderRadius: '3px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    color: coin,
+    fontSize: '16px',
+    height: '24px',
+    iconPadding: '5px 5px 0 5px',
+    margin: '28px 0 0',
+    textAlign: 'center',
+    width: '250px',
+  },
 }
