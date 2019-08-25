@@ -76,7 +76,7 @@ export const TextArea = styled.textarea`
 
 const FormInput = (props) => {
   const {
-    control, field, maxLength, value, placeholder, autoComplete, required, onChange, buttonText,
+    autoComplete, buttonText, control, field, maxLength, onChange, placeholder, required, value,
   } = props
 
   switch (control) {
@@ -142,7 +142,7 @@ FormInput.defaultProps = {
   onChange: null,
   placeholder: '',
   required: false,
-  value: '',
+  value: undefined,
 }
 
 FormInput.propTypes = {
