@@ -20,6 +20,7 @@ export const LabelText = styled.span`
   margin-right: ${(props) => props.theme.forms.formField.labelText.marginRight};
   position: absolute;
   top: ${(props) => props.theme.forms.formField.labelText.top};
+  text-transform: capitalize;
 `
 
 const FormField = (props) => {
@@ -48,7 +49,7 @@ FormField.propTypes = {
   /**
    * The input child element to display
    */
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   /**
    * True if element should be centered, otherwise false
    */

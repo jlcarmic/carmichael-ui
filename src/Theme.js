@@ -88,7 +88,7 @@ export default {
     form: {
       flexDirection: 'column',
       justifyContent: 'center',
-      margin: '0 auto 30px',
+      margin: '0 auto',
       maxWidth: '400px',
       title: {
         fontSize: '22px',
@@ -98,10 +98,10 @@ export default {
     },
     formField: {
       leftAlignedFormField: {
-        margin: '0 auto 20px',
+        margin: '0 auto 30px',
       },
       centeredFormField: {
-        margin: '0 auto 20px',
+        margin: '0 auto 30px',
       },
       labelText: {
         fontSize: '11px',
@@ -270,6 +270,31 @@ export default {
         desktop: '0',
         mobile: '15px',
       },
+    },
+  },
+  profile: {
+    borderColor: storm,
+    borderStyle: 'solid',
+    borderRadius: '8px',
+    borderWidth: '1px',
+    color: storm,
+    editIcon: {
+      color: cerulean,
+      fontSize: '16px',
+    },
+    link: {
+      color: kelly,
+      fontWeight: '600',
+      marginLeft: '10px',
+    },
+    title: {
+      color: cerulean,
+      fontSize: '16px',
+      fontWeight: '600',
+    },
+    width: {
+      desktop: '500px',
+      mobile: '300p',
     },
   },
   scrollable: {

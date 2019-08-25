@@ -36,6 +36,6 @@ storiesOf('Forms', module)
       <BrowserRouter>
         <FormLinks links={links} />
       </BrowserRouter>
-      <FormInput control="submit" buttonText="Submit Form" />
+      <FormInput control="submit" field="submitform" buttonText="Submit Form" />
     </Form>
   ))

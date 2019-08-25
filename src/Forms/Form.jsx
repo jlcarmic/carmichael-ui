@@ -39,7 +39,7 @@ Form.propTypes = {
   /**
    * The elements to display in the form
    */
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   /**
    * The name attribute of the form
    */

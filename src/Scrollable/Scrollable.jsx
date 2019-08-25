@@ -72,7 +72,7 @@ Scrollable.propTypes = {
   /**
    *  The React components to be displayed within the scrollable container
    */
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Scrollable
