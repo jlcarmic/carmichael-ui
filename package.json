@@ -23,7 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/jlcarmic/carmichael-ui.git"
   },
-  "author": "John Carmichael <jlcarmic@gmail.com>",
+  "author": "John Carmichael",
   "license": "unlicense",
   "bugs": {
     "url": "https://github.com/jlcarmic/carmichael-ui/issues"
